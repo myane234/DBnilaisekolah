@@ -1,16 +1,16 @@
 CREATE VIEW v_rapor AS
-SELECT
+SELECT 
   s.nis,
   s.nama AS nama_siswa,
-  k.nama_kelas,
-  m.nama_mapel,
+  k.nama_mapel,
   g.nama_guru,
   n.nilai,
   n.semester,
   n.tahun_ajaran
-FROM nilai n
-JOIN siswa s ON n.id_siswa = s.id_siswa
-JOIN pengajar p ON n.id_pengajar = p.id_pengajar
-JOIN guru g ON p.id_guru = g.id_guru
-JOIN mapel m ON p.id_mapel = m.id_mapel
-JOIN kelas k ON p.id_kelas = k.id_kelas;
+  FROM nilai n JOIN siswa s ON n.id_siswa = s.id_siswa
+  JOIN pengajar p ON n.id_pengajar = p.id_pengajar
+  JOIN guru g ON p.id_guru = g.id_guru
+  join mapel m ON p.id_mapel = m.id_mapel
+  JOIN kelas k ON s.id_kelas = k.id_kelas;
+
+  //Hapus view
