@@ -1,0 +1,4 @@
+CREATE TRIGGER tr_uppercase_siswa
+BEFORE INSERT ON siswa
+FOR EACH ROW
+SET NEW.nama = UPPER(NEW.nama);
